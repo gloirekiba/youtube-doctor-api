@@ -5,10 +5,10 @@ const { typeDefs, resolvers } = require("./schema");
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  csrfPrevention: true,
-  cache: "bounded",
+  // csrfPrevention: true,
+  // cache: "bounded",
 });
 
-server.listen().then(({ url }) => {
+server.listen({ port: 40000 }).then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
