@@ -63,8 +63,6 @@ const typeDefs = gql`
 
   type Media {
     year: String
-    game: String
-    game_url: String
     thumbnails: [Thumbnails]
     category: String
     category_url: String
