@@ -2,9 +2,8 @@ const { gql } = require("apollo-server");
 
 const typeDefs = gql`
   type Query {
-    validateURL(url: String!): Boolean!
-    author: Author
     video(url: String!): Video!
+    validateURL(url: String!): Boolean!
   }
 
   type Video {
