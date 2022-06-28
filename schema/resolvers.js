@@ -2,6 +2,7 @@ const ytdl = require("ytdl-core");
 
 const resolvers = {
   Query: {
+    validateURL: (_parent, { url }) => ytdl.validateURL(url),
     video: (_parent, { url }) =>
       ytdl
         .getInfo(url)
@@ -9,7 +10,6 @@ const resolvers = {
         .catch((err) => {
           throw new Error(err);
         }),
-    validateURL: (_parent, { url }) => ytdl.validateURL(url),
   },
 };
 
