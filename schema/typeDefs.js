@@ -32,7 +32,7 @@ const typeDefs = gql`
     isPrivate: Boolean
     isUnpluggedCorpus: Boolean
     isLiveContent: Boolean
-    media: Media
+    # media: Media
     likes: Int
     dislikes: Int
     age_restricted: Boolean
