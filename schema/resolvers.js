@@ -3,8 +3,8 @@ const ytdl = require("ytdl-core");
 const resolvers = {
   Query: {
     validateURL: (_parent, { url }) => ytdl.validateURL(url),
-    video: (_parent, { url }) =>
-     await ytdl
+    video: async (_parent, { url }) =>
+      await ytdl
         .getInfo(url)
         .then(({ videoDetails }) => videoDetails)
         .catch((err) => {
