@@ -13,12 +13,7 @@ git clone https://github.com/gloirekiba/youtube-video-details-api.git
 cd youtube-video-details-api
 ```
 
-### install dependencies
+### install dependencies and run the server
 ```bash
-npm install
+npm install && npm start
 ```
-### run the server
-```bash
-npm start
-```
-
