@@ -8,7 +8,7 @@ const resolvers = {
       try {
         return (await ytdl.getInfo(url)).videoDetails;
       } catch (error) {
-        throw new Error(err);
+        throw new Error(error);
       }
     },
   },
