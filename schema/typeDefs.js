@@ -10,6 +10,7 @@ const typeDefs = gql`
     embed: Embed
     title: String
     description: String
+    format: Format
     lengthSeconds: String
     ownerProfileUrl: String
     externalChannelId: String
@@ -83,6 +84,42 @@ const typeDefs = gql`
     url: String
     width: Int
     height: Int
+  }
+
+  type Format {
+    mimeType: String
+    qualityLabel: String
+    bitrate: Int
+    audioBitrate: Int
+    itag: Int
+    # initRange: {
+    #   start: String
+    #   end: String
+    # }
+    # indexRange: {
+    #   start: String
+    #   end: String
+    # }
+    lastModified: String
+    contentLength: String
+    quality: String
+    projectionType: String
+    averageBitrate: Int
+    audioQuality: String
+    approxDurationMs: String
+    audioSampleRate: String
+    audioChannels: Int
+    loudness: Float
+    url: String
+    hasVideo: Boolean
+    hasAudio: Boolean
+    container: String
+    codecs: String
+    videoCodec: String
+    audioCodec: String
+    isLive: Boolean
+    isHLS: Boolean
+    isDashMPD: Boolean
   }
 `;
 
