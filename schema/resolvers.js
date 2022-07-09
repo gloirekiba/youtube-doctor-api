@@ -12,6 +12,17 @@ const resolvers = {
       }
     },
   },
+
+  Video: {
+    formats: async (_parent, _args, _context, { variableValues }) => {
+      try {
+        const { url } = variableValues;
+        return (await ytdl.getInfo(url)).formats;
+      } catch (error) {
+        throw new Error(error);
+      }
+    },
+  },
 };
 
 module.exports = resolvers;
