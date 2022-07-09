@@ -10,7 +10,7 @@ const typeDefs = gql`
     embed: Embed
     title: String
     description: String
-    format: Format
+    formats: [Format]
     lengthSeconds: String
     ownerProfileUrl: String
     externalChannelId: String
