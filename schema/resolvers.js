@@ -5,12 +5,11 @@ const resolvers = {
     validateURL: (_parent, { url }) => ytdl.validateURL(url),
     video: async (_parent, { url }) => {
       if (!ytdl.validateURL(url)) throw new Error("Invalid url");
-      return await ytdl
-        .getInfo(url)
-        .then(({ videoDetails }) => videoDetails)
-        .catch((err) => {
-          throw new Error(err);
-        });
+      try {
+        return (await ytdl.getInfo(url)).videoDetails;
+      } catch (error) {
+        throw new Error(err);
+      }
     },
   },
 };
